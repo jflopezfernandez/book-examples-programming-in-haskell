@@ -1,0 +1,25 @@
+# Calling Convention
+
+```Haskell
+    print (parse item "")
+    print (parse item "abc")
+    print (parse (fmap toUpper item) "abc")
+    print (parse (fmap toUpper item) "")
+    print (parse (pure (1 :: Integer)) "abc")
+    print (parse three "abcdef")
+    print (parse three "ab")
+    print (parse three' "ab")
+    print (parse (item <|> return 'd') "abc")
+    print (parse (empty <|> return 'd') "abc")
+    print (parse (char 'a') "abc")
+    print (parse (alphanum) "abc")
+    print (parse (digit) "abc4e")
+    print (parse (alphanum) "abc4e")
+    print (parse (string "abc") "abcdef")
+    print (parse (string "abc") "ab1234")
+    print (parse ident "abc def")
+    print (parse nat "123 abc")
+    print (parse space "     abc")
+    print (parse int "-123 abc")
+    print (parse int "20 abc")
+```
